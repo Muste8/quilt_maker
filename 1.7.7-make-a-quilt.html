@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        display:flex;
+		        flex-wrap: wrap;
+		        height:100%;
+		        width:100%;
+		        padding-left:2%;
+		        padding-right:2%;
+		    }
+		    div{
+		        height:10%;
+		        width:9%;
+		        border: 1px solid black;
+		    }
+		</style>
+	</head>
+	<body>
+		<script>
+			
+			// The quilt will be made of 100 div tags. 
+
+			// When the mouse hovers over a div, the div should change to one of four random colors. 
+			
+			// Create a function paint that generates a random color, and sets the backgound color of the div to that color.
+
+			// Remember, Math.random() 
+		    //add 100 divs to the canvas
+
+			for(var i = 0; i < 100; i++){
+				const div = document.createElement("div");
+				// div.setAttribute("class", "divs")
+				div.addEventListener("mouseover", paint);
+				document.body.appendChild(div);	
+			};
+
+
+		    //write function paint 
+			function paint(){
+				const randomNum = parseInt(Math.random() * 4);
+				if(randomNum === 0){
+					this.style.backgroundColor = "purple";
+				}else if(randomNum === 1){
+					this.style.backgroundColor = "green";
+				}else if(randomNum === 2){
+					this.style.backgroundColor = "blue";
+				}else if(randomNum === 3){
+					this.style.backgroundColor = "brown";
+				}
+
+			};
+
+		</script>
+	</body>
+</html>
